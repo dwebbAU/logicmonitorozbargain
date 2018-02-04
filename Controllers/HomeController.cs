@@ -34,7 +34,7 @@ namespace logicmonitorozbargain.Controllers
             List<string> bargains = new List<string>();
             for (int i = 1; i < elemList.Count; i++)
             {
-                bargains.Add(elemList[i].InnerXml);
+                bargains.Add((elemList[i].InnerXml).Replace("@","at"));
                 Console.WriteLine(elemList[i].InnerXml);
             }
 
