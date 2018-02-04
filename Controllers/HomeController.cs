@@ -5,6 +5,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using logicmonitorozbargain.Models;
+using System.Net;
+using System.Text;
+using System.IO;
+using System.Xml;
+
 
 namespace logicmonitorozbargain.Controllers
 {
@@ -12,19 +17,33 @@ namespace logicmonitorozbargain.Controllers
     {
         public IActionResult Index()
         {
-            return View();
-        }
+            WebRequest request = WebRequest.Create("https://www.ozbargain.com.au/deals/feed");
+            WebResponse response = request.GetResponse();
+            // Get the stream containing content returned by the server.  
+            Stream dataStream = response.GetResponseStream();
+            // Open the stream using a StreamReader for easy access.  
+            StreamReader reader = new StreamReader(dataStream);
+            // Read the content.  
+            string responseFromServer = reader.ReadToEnd();
+            // Display the content.  
+            //Console.WriteLine (responseFromServer);  
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(responseFromServer);
+            XmlNodeList elemList = xmlDoc.GetElementsByTagName("title");
+            List<string> bargains = new List<string>();
+            for (int i = 1; i < elemList.Count; i++)
+            {
+                bargains.Add(elemList[i].InnerXml);
+                Console.WriteLine(elemList[i].InnerXml);
+            }
 
-            return View();
-        }
+            string[] strBargains = bargains.ToArray();
+            ViewBag.bargains = strBargains;
 
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
+            // Clean up the streams and the response.  
+            reader.Close();
+            response.Close();
 
             return View();
         }

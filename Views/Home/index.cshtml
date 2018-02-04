@@ -1,0 +1,18 @@
+@{
+    ViewData["Title"] = "Top Bargains";
+}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Top Bargain</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (string bargain in ViewBag.bargains) {
+      <tr>
+    <td>@bargain</td>
+    </tr>
+    }
+  </tbody>
+</table>
