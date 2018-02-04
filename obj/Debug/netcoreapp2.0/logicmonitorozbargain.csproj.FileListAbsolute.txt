@@ -1,0 +1,10 @@
+c:\Projects\logicmonitor\logicmonitorozbargain\bin\Debug\netcoreapp2.0\logicmonitorozbargain.deps.json
+c:\Projects\logicmonitor\logicmonitorozbargain\bin\Debug\netcoreapp2.0\logicmonitorozbargain.runtimeconfig.json
+c:\Projects\logicmonitor\logicmonitorozbargain\bin\Debug\netcoreapp2.0\logicmonitorozbargain.runtimeconfig.dev.json
+c:\Projects\logicmonitor\logicmonitorozbargain\bin\Debug\netcoreapp2.0\logicmonitorozbargain.dll
+c:\Projects\logicmonitor\logicmonitorozbargain\bin\Debug\netcoreapp2.0\logicmonitorozbargain.pdb
+c:\Projects\logicmonitor\logicmonitorozbargain\obj\Debug\netcoreapp2.0\logicmonitorozbargain.csproj.CoreCompileInputs.cache
+c:\Projects\logicmonitor\logicmonitorozbargain\obj\Debug\netcoreapp2.0\logicmonitorozbargain.AssemblyInfoInputs.cache
+c:\Projects\logicmonitor\logicmonitorozbargain\obj\Debug\netcoreapp2.0\logicmonitorozbargain.AssemblyInfo.cs
+c:\Projects\logicmonitor\logicmonitorozbargain\obj\Debug\netcoreapp2.0\logicmonitorozbargain.dll
+c:\Projects\logicmonitor\logicmonitorozbargain\obj\Debug\netcoreapp2.0\logicmonitorozbargain.pdb
