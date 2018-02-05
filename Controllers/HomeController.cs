@@ -32,7 +32,7 @@ namespace logicmonitorozbargain.Controllers
             xmlDoc.LoadXml(responseFromServer);
             XmlNodeList elemList = xmlDoc.GetElementsByTagName("title");
             List<string> bargains = new List<string>();
-            for (int i = 1; i < elemList.Count; i++)
+            for (int i = 1; i < 4; i++)
             {
                 bargains.Add((elemList[i].InnerXml).Replace("@","at"));
                 Console.WriteLine(elemList[i].InnerXml);
