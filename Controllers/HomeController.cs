@@ -15,7 +15,7 @@ namespace logicmonitorozbargain.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(int resultCount = 3)
         {
             WebRequest request = WebRequest.Create("https://www.ozbargain.com.au/deals/feed");
             WebResponse response = request.GetResponse();
@@ -32,7 +32,10 @@ namespace logicmonitorozbargain.Controllers
             xmlDoc.LoadXml(responseFromServer);
             XmlNodeList elemList = xmlDoc.GetElementsByTagName("title");
             List<string> bargains = new List<string>();
-            for (int i = 1; i < 4; i++)
+            if(resultCount > elemList.Count){
+                resultCount = elemList.Count - 1;
+            }
+            for (int i = 1; i < resultCount+1; i++)
             {
                 bargains.Add((elemList[i].InnerXml).Replace("@","at"));
                 Console.WriteLine(elemList[i].InnerXml);
