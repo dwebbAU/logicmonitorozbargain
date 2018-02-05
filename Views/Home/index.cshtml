@@ -2,17 +2,10 @@
     ViewData["Title"] = "Top Bargains";
 }
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Top Bargains</th>
-    </tr>
-  </thead>
-  <tbody>
+<ul style="list-style: none">
     @foreach (string bargain in ViewBag.bargains) {
-      <tr>
-    <td><p>@bargain</p></td>
-    </tr>
+      
+    <li><p><small>@bargain</small></p></li>
+    
     }
-  </tbody>
-</table>
+</ul>
